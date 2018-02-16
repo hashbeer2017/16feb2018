@@ -8,6 +8,7 @@ public class Warehouse extends GridObject{
     protected HashMap<Product, Integer> stocks;
 
     public Warehouse(int x, int y, int id, HashMap<Product, Integer> stocks) {
+        super.coordinate = new Coordinate(x,y);
         this.id = id;
         this.stocks = stocks;
     }

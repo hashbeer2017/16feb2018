@@ -7,7 +7,8 @@ public class Order extends GridObject{
     protected int id;
     protected HashMap<Product, Integer> products;
 
-    public Order(int id, HashMap<Product, Integer> products) {
+    public Order(int x, int y, int id, HashMap<Product, Integer> products) {
+        super.coordinate = new Coordinate(x,y);
         this.id = id;
         this.products = products;
     }
