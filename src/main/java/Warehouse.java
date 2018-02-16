@@ -5,9 +5,9 @@ import java.util.HashMap;
  */
 public class Warehouse extends GridObject{
     private int id;
-    private HashMap<Product, Integer> stocks;
+    private HashMap<Integer, Integer> stocks;
 
-    public Warehouse(int x, int y, int id, HashMap<Product, Integer> stocks) {
+    public Warehouse(int x, int y, int id, HashMap<Integer, Integer> stocks) {
         super.coordinate = new Coordinate(x,y);
         this.id = id;
         this.stocks = stocks;
@@ -17,7 +17,7 @@ public class Warehouse extends GridObject{
         this.id = id;
     }
 
-    public void setStocks(HashMap<Product, Integer> stocks) {
+    public void setStocks(HashMap<Integer, Integer> stocks) {
         this.stocks = stocks;
     }
 
@@ -26,31 +26,31 @@ public class Warehouse extends GridObject{
         return id;
     }
 
-    public HashMap<Product, Integer> getStocks() {
+    public HashMap<Integer, Integer> getStocks() {
         return stocks;
     }
 
-    public void increment(Product p, int num){
-        if(this.stocks.containsKey(p)){
-            this.stocks.put(p, num);
+    public void increment(int productId, int num){
+        if(this.stocks.containsKey(productId)){
+            this.stocks.put(productId, num);
         }else {
-            int value = this.stocks.get(p);
-            this.stocks.remove(p);
-            this.stocks.put(p, value + num);
+            int value = this.stocks.get(productId);
+            this.stocks.remove(productId);
+            this.stocks.put(productId, value + num);
         }
     }
 
-    public void decrement(Product p, int num){
-        if(!this.stocks.containsKey(p)){
-            throw new NotProductInWarehouse("The product " + p + " is not presented in this warehouse");
+    public void decrement(int productId, int num){
+        if(!this.stocks.containsKey(productId)){
+            throw new NotProductInWarehouse("The product " + productId + " is not presented in this warehouse");
         }
 
-        int value = this.stocks.get(p);
+        int value = this.stocks.get(productId);
         if(num > value){
             throw new ToHighRequestError("Decrement not done. #product to decrement < of #num product available.");
         }else{
-            this.stocks.remove(p);
-            this.stocks.put(p, value - num);
+            this.stocks.remove(productId);
+            this.stocks.put(productId, value - num);
         }
     }
 
