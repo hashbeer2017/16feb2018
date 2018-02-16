@@ -1,12 +1,13 @@
 /**
  * Created by Domenico on 16/02/2018.
  */
-public class Product {
+public class Product extends GridObject {
 
     protected int typeId;
     protected double weight;
 
-    public Product(int typeId, double weight) {
+    public Product(int x, int y, int typeId, double weight) {
+        super.coordinate = new Coordinate(x, y);
         this.typeId = typeId;
         this.weight = weight;
     }
