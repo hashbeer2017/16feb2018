@@ -3,9 +3,9 @@
  */
 public class Product{
     private int typeId;
-    private double weight;
+    private int weight;
 
-    public Product(int typeId, double weight) {
+    public Product(int typeId, int weight) {
         this.typeId = typeId;
         this.weight = weight;
     }
@@ -18,11 +18,11 @@ public class Product{
         this.typeId = typeId;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
