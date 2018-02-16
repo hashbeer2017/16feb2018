@@ -32,6 +32,6 @@ public class Drone extends GridObject{
         return "Drone{" +
                 "id=" + id +
                 ", maxPayload=" + maxPayload +
-                '}';
+                "} " + super.toString();
     }
 }

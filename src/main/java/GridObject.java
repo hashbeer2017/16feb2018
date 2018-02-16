@@ -23,4 +23,11 @@ public abstract class GridObject {
     public int getY(){
         return this.coordinate.getY();
     }
+
+    @Override
+    public String toString() {
+        return "GridObject{" +
+                "coordinate=" + coordinate +
+                '}';
+    }
 }

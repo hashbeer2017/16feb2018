@@ -59,6 +59,6 @@ public class Warehouse extends GridObject{
         return "Warehouse{" +
                 "id=" + id +
                 ", stocks=" + stocks +
-                '}';
+                "} " + super.toString();
     }
 }

@@ -46,6 +46,6 @@ public class Order extends GridObject{
         return "Order{" +
                 "id=" + id +
                 ", products=" + products +
-                '}';
+                "} " + super.toString();
     }
 }
