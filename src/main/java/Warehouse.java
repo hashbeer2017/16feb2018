@@ -30,12 +30,20 @@ public class Warehouse extends GridObject{
     }
 
     public void increment(Product p, int num){
-        int value = this.stocks.get(p);
-        this.stocks.remove(p);
-        this.stocks.put(p, value + num);
+        if(this.stocks.containsKey(p)){
+            this.stocks.put(p, num);
+        }else {
+            int value = this.stocks.get(p);
+            this.stocks.remove(p);
+            this.stocks.put(p, value + num);
+        }
     }
 
     public void decrement(Product p, int num){
+        if(!this.stocks.containsKey(p)){
+            throw new NotProductInWarehouse("The product " + p + " is not presented in this warehouse");
+        }
+
         int value = this.stocks.get(p);
         if(num > value){
             throw new ToHighRequestError("Decrement not done. #product to decrement < of #num product available.");
@@ -43,5 +51,13 @@ public class Warehouse extends GridObject{
             this.stocks.remove(p);
             this.stocks.put(p, value - num);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Warehouse{" +
+                "id=" + id +
+                ", stocks=" + stocks +
+                '}';
     }
 }

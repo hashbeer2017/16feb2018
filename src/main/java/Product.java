@@ -27,4 +27,11 @@ public class Product{
         return weight;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "typeId=" + typeId +
+                ", weight=" + weight +
+                '}';
+    }
 }
