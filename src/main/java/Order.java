@@ -4,8 +4,8 @@ import java.util.HashMap;
  * Created by Domenico on 16/02/2018.
  */
 public class Order extends GridObject{
-    protected int id;
-    protected HashMap<Product, Integer> products;
+    private int id;
+    private HashMap<Product, Integer> products;
 
     public Order(int x, int y, int id, HashMap<Product, Integer> products) {
         super.coordinate = new Coordinate(x,y);

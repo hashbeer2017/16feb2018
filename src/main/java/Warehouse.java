@@ -4,8 +4,8 @@ import java.util.HashMap;
  * Created by Domenico on 16/02/2018.
  */
 public class Warehouse extends GridObject{
-    protected int id;
-    protected HashMap<Product, Integer> stocks;
+    private int id;
+    private HashMap<Product, Integer> stocks;
 
     public Warehouse(int x, int y, int id, HashMap<Product, Integer> stocks) {
         super.coordinate = new Coordinate(x,y);

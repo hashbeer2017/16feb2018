@@ -2,8 +2,8 @@
  * Created by Domenico on 16/02/2018.
  */
 public class Drone extends GridObject{
-    int id;
-    int maxPayload;
+    private int id;
+    private int maxPayload;
 
     public Drone(int x, int y, int id, int maxPayload){
         super.coordinate = new Coordinate(x,y);

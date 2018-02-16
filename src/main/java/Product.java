@@ -2,9 +2,8 @@
  * Created by Domenico on 16/02/2018.
  */
 public class Product{
-
-    protected int typeId;
-    protected double weight;
+    private int typeId;
+    private double weight;
 
     public Product(int typeId, double weight) {
         this.typeId = typeId;
