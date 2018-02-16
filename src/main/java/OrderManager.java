@@ -11,8 +11,11 @@ public class OrderManager {
         }
     }
 
-    public Coordinate getCustomerCoordianate(int orderID) {
-        return new Coordinate(0, 0);
+    public Order getOrder(int orderID){
+        return this.orders.get(orderID);
     }
 
+    public Coordinate getCustomerCoordianate(int orderID) {
+        return this.getOrder(orderID).getCoordinate();
+    }
 }

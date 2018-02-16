@@ -30,7 +30,6 @@ public class Order extends GridObject{
     }
 
     public boolean isDone(){
-        boolean done = false;
         for(int val : this.products.values()){
             if(val > 0)
                 return false;

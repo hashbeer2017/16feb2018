@@ -6,15 +6,13 @@ import java.util.List;
  * Created by Domenico on 16/02/2018.
  */
 public class DroneManager {
-    private List<Drone> drones;
     private HashMap<Integer, Drone> dronesIndex;
 
     public DroneManager(List<Drone> drones) {
-        this.drones = drones;
         this.dronesIndex = new HashMap<Integer, Drone>();
 
         //Create index for drones
-        for(Drone d : this.drones){
+        for(Drone d : drones){
             dronesIndex.put(d.getId(), d);
         }
     }
@@ -23,11 +21,7 @@ public class DroneManager {
         return dronesIndex;
     }
 
-    public void setDrones(List<Drone> drones) {
-        this.drones = drones;
-        //Create index for drones
-        for(Drone d : this.drones){
-            dronesIndex.put(d.getId(), d);
-        }
+    public Drone getDrone(int droneId){
+        return this.dronesIndex.get(droneId);
     }
 }
